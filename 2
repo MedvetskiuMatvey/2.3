@@ -1,0 +1,19 @@
+
+
+def alternatingsplit(linklist):
+    if len(linklist) < 2:
+        raise ValueError('the list must contain at least two elements')
+    
+    list1 = LinkedList()
+    list2 = LinkedList()
+    
+    current = linklist.first
+    while current:
+        list1.addback(current.data)
+        current = current.next
+        
+        if current:
+            list2.addback(current.data)
+            current = current.next
+    
+    return (list1, list2)
